@@ -11,7 +11,7 @@ jobs:
       - name: Show NPU info
         run: |
           npu-smi info
-      - run: sleep 300
+      - run: sleep 600
   job_1:
     runs-on: linux-arm64-npu-1-k8smode-v11
     container:
@@ -21,5 +21,5 @@ jobs:
       - name: Show NPU info
         run: |
           npu-smi info
-      - run: sleep 300
+      - run: sleep 600
 
