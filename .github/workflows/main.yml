@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   job_0:
-    runs-on: linux-arm64-npu-1-k8smode-v11
+    runs-on: test-for-metrics
     container:
       image: ascendai/cann:latest
       
@@ -13,7 +13,7 @@ jobs:
           npu-smi info
       - run: sleep 6000
   job_1:
-    runs-on: linux-arm64-npu-1-k8smode-v11
+    runs-on: test-for-metrics
     container:
       image: ascendai/cann:latest
       
