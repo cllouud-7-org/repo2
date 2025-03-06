@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   job_0:
-    runs-on: test-for-metrics
+    runs-on: sidecar1
     container:
       image: ascendai/cann:latest
       
@@ -13,7 +13,7 @@ jobs:
           npu-smi info
       - run: sleep 6000
   job_1:
-    runs-on: test-for-metrics
+    runs-on: sidecar1
     container:
       image: ascendai/cann:latest
       
