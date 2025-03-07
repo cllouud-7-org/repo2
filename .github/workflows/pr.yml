@@ -1,0 +1,28 @@
+name: CI on PR
+
+# 触发条件：当有新的 Pull Request 打开、同步或重新打开时触发
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  job_0:
+    runs-on: sidecar1
+    container:
+      image: ascendai/cann:latest
+      
+    steps:
+      - name: Show NPU info
+        run: |
+          npu-smi info
+      - run: sleep 3600
+  job_1:
+    runs-on: sidecar1
+    container:
+      image: ascendai/cann:latest
+      
+    steps:
+      - name: Show NPU info
+        run: |
+          npu-smi info
+      - run: sleep 3600
