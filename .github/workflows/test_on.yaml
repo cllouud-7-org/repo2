@@ -1,0 +1,27 @@
+name: Test On
+on:
+  workflow_dispatch:
+  release:
+    types:
+      - 'published'
+  schedule:
+    - cron: '0 12 * * *'
+  repository_dispatch:
+    types: [pytorch-pr-event-redispatch]
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+jobs:
+  job_1:
+    runs-on: linux-arm64-npu-1
+    container:
+      image: ascendai/cann:latest
+
+    steps:
+      - name: Show NPU info
+        run: |
+          npu-smi info
+      - run: sleep 3600
