@@ -5,12 +5,12 @@ on:
     types:
       - 'published'
   schedule:
-    - cron: '29 9 * * *'
+    - cron: '* * * * *'
   repository_dispatch:
     types: [pytorch-pr-event-redispatch]
-  push:
-    branches:
-      - 'main'
+  # push:
+  #   branches:
+  #     - 'main'
   pull_request:
     branches:
       - 'main'
