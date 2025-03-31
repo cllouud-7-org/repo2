@@ -4,6 +4,8 @@ on:
 jobs:
   job_1:
     runs-on: linux-arm64-npu-1
+    container:
+      image: ascendai/cann:latest
     steps:
       - name: Sleep
         run: |
